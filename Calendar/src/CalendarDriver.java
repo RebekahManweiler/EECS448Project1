@@ -6,6 +6,7 @@
  */
 
 import java.io.*;
+import java.util.ArrayList;
 /**
  * <h2>CalendarDriver Class</h2>
  * <p>Contains an instance "year" of the CalendarYear Class
@@ -21,6 +22,8 @@ public class CalendarDriver {
 	private static CalendarDay curDay;
 	private static CalendarMonth curMonth;
 	
+	private EventGroup events;
+	
 	/**
 	 * Sets CalendarDriver object up by setting
 	 * <p>year object to new CalendarYear
@@ -32,6 +35,9 @@ public class CalendarDriver {
 		year = new CalendarYear();
 		curDay = getCurrentDate();
 		curMonth = getCurrentMonth();
+		
+		events = new EventGroup();
+		
 		setDaysofWeek("Monday");
 	}
 	
@@ -317,5 +323,10 @@ public class CalendarDriver {
 		CalendarWeek newWeek = new CalendarWeek();
 		newWeek.setupWeek(day, year);
 		return newWeek;
+	}
+	
+	public ArrayList<String> getEventsForDate(String month, int day, int year){
+		 
+		return events.getEventsForDate(month, day, year);
 	}
 }
