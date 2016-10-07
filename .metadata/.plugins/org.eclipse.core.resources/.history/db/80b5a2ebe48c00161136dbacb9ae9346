@@ -27,11 +27,10 @@ public class CalendarDay
 	 * @param m - String: name of CalendarMonth that CalendarDay belongs to
 	 * @see CalendarMonth
 	 */
-	public CalendarDay(int d, String m, int year)
+	public CalendarDay(int d, String m)
 	{
 		this.date = d;
 		this.month = m;
-		this.year = year;
 		this.dayEvents = new ArrayList<String>();
 		monthFilePath = "MonthFiles/" + m + ".txt";
 	}
